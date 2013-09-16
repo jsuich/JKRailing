@@ -2,7 +2,16 @@ JKRailing::Application.routes.draw do
 
   resources :session
 
+  resources :users
+
+  resources :posts
+
+  resources :comments
+  
+
   root to: "session#index"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
