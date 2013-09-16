@@ -7,7 +7,7 @@
 
   <p>
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </p>
 
   <p>
@@ -17,7 +17,7 @@
 <br>
 <hr>
 <br>
-<%= form_for :user, :method => "post" do |f| %>
+<%= form_for User.new do |f| %>
   <p>
     <h3> Register </h3>
     <%= f.label :email %>
@@ -26,7 +26,7 @@
 
   <p>
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </p>
 
   <p>
