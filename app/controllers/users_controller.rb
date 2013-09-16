@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.create(params[:user])
     if @user
       session[:user_id] = @user.id
-      redirect to: :posts
+      redirect_to @posts
     else
     end
   end
