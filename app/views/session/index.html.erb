@@ -1,0 +1,35 @@
+<%= form_for :session do |f| %>
+  <p>
+    <h3> Login </h3>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit "Login" %>
+  </p>
+<% end %>
+<br>
+<hr>
+<br>
+<%= form_for :user, :method => "post" do |f| %>
+  <p>
+    <h3> Register </h3>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit "Register" %>
+  </p>
+<% end %>
