@@ -1,3 +1,12 @@
-
+<h3>
+  <%= link_to "New", new_post_path %>
+</h3>
 
 <h1> These are some POsts</h1>
+<% @posts.each do |post| %>
+  <ul>
+    <li><%= post.user.email %></li>
+    <li><%= post.title %></li>
+    <li><%= post.body %></li>
+  </ul>
+<% end %>
