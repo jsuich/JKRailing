@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p params
     @post = current_user.posts.create(params[:post])
 
     if @post.save
@@ -17,5 +16,26 @@ class PostsController < ApplicationController
       puts "post NOT created"
       render new_post_path
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(params[:post])
+    redirect_to posts_path
   end
 end
