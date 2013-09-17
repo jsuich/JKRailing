@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p params
     @post = current_user.posts.create(params[:post])
 
     if @post.save
@@ -31,6 +30,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    render 
+    redirect_to posts_path
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(params[:post])
+    redirect_to posts_path
   end
 end
