@@ -18,4 +18,19 @@ class PostsController < ApplicationController
       render new_post_path
     end
   end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    render 
+  end
 end
