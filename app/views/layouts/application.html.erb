@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+  <div class="navItems">
+    <% if logged_in? %>
+      <%= current_user.email %>
+    <% end %>
+  </div>
+  <div class="navItems">LOGO</div>
+  <div class="navItems">POSTS</div>
+  <div class="navItems">COMMENTS</div>
+  <div class="navItems">PROFILE</div>
+</nav>
 <%= yield %>
 
 </body>
